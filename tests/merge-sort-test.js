@@ -1,32 +1,29 @@
-//make the following test pass
-//bubbleSort(["d", "b", "a", "c"])
-// => ["a", "b", "c", "d"]
 import { expect } from 'chai';
-import bubbleSort from '../scripts/bubble-sort'
+import mergeSort from '../scripts/merge-sort'
 
-describe ('bubbleSort',() => {
+describe ('mergeSort',() => {
   describe('array', () => {
  it('should return an array', () => {
-    expect(Array.isArray(bubbleSort([]))).to.be.true
+    expect(Array.isArray(mergeSort([]))).to.be.true
   });
 })
 it('should return an alphabetically sorted array', () => {
-  let sortedArray = bubbleSort(['d', 'b', 'a', 'c'])
+  let sortedArray = mergeSort(['d', 'b', 'a', 'c'])
   expect(sortedArray).to.deep.equal(['a','b','c','d'])
 });
 
-it('should return a numerically sorted array', () => {
-  let unsortedArray = bubbleSort(['4', '2', '1', '3'])
+it('should return a numarically sorted array', () => {
+  let unsortedArray = mergeSort(['4', '2', '1', '3'])
   expect(unsortedArray).to.deep.equal(['1','2','3','4'])
 });
 
 it('should not unsort a alphabetically sorted array', () => {
-  let sortedArray = bubbleSort(['a', 'b', 'c', 'd'])
+  let sortedArray = mergeSort(['a', 'b', 'c', 'd'])
   expect(sortedArray).to.deep.equal(['a', 'b', 'c', 'd'])
 });
 
 it('should not unsort a numerically sorted array', () => {
-  let sortedArray = bubbleSort(['1', '2', '3', '4'])
+  let sortedArray = mergeSort(['1', '2', '3', '4'])
   expect(sortedArray).to.deep.equal(['1', '2', '3', '4'])
 });
 
